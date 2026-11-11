@@ -1,0 +1,27 @@
+{
+  "dhf-store-write-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ./hooks/pre_tool_guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "samd-session-initializer": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python3 ./hooks/session_start_banner.py",
+        "timeout": 10
+      }
+    ]
+  }
+}

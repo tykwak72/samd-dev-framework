@@ -1,0 +1,38 @@
+{
+  "items": [
+    {
+      "id": "HAZ-SEC-001",
+      "type": "HAZ-SEC",
+      "version": 4,
+      "status": "approved",
+      "title": "비정상 대용량/손상 이미지 주입에 의한 DoS 메모리 고갈 위협",
+      "description": "악의적 비정상 파일 주입 시 메모리 오버플로우로 전체 병리 서버 중단",
+      "traces_to": {
+        "SRS-001": 3
+      },
+      "stage_identified": "Stage 1",
+      "stride_category": "Denial of Service",
+      "threat_scenario": "손상된 헤더를 가진 거대 이미지 로딩 시 OOM 충돌",
+      "patient_safety_impact": "응급 환자 검체 분석 불가",
+      "updated_at": "2026-11-09T14:48:29.211327+00:00",
+      "updated_by": "4-B_residual_risk_evaluator",
+      "residual_acceptable": true
+    },
+    {
+      "id": "RC-SEC-001",
+      "type": "RC-SEC",
+      "version": 4,
+      "status": "approved",
+      "title": "파일 크기 상한(5GB) 및 헤더 매직넘버 사전 검증",
+      "description": "파싱 전 파일 크기 및 포맷 무결성을 검사하여 비인가 메모리 폭주 차단",
+      "traces_to": {
+        "HAZ-SEC-001": 4
+      },
+      "security_control_type": "input_validation",
+      "control_measure": "파일 크기 및 확장자/헤더 사전 검증 후 안전 로더 호출",
+      "safety_tradeoff_check": "0.05초 사전 검사 지연은 임상 긴급성에 전혀 영향 없음",
+      "updated_at": "2026-11-09T14:48:29.250031+00:00",
+      "updated_by": "1-C_security_risk_analyst"
+    }
+  ]
+}

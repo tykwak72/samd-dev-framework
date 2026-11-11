@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "id": "INT-001",
+      "type": "INT",
+      "version": 1,
+      "status": "approved",
+      "title": "디지털 병리 슬라이드 조직 분할 및 품질관리(QC) 컴포넌트",
+      "description": "H&E 염색 WSI 슬라이드에서 유효 조직 영역을 자동 분할하고 artifact(기포, 접힘, 펜마킹 등)를 배제하며, artifact 비율 초과 시 저품질 상태를 보고하는 전처리 모듈",
+      "traces_to": {},
+      "intended_use": "디지털 병리 WSI 이미지에서 유효 조직을 분할·식별하고 artifact를 배제하여 슬라이드 품질 적합성을 판정",
+      "indications_for_use": "조직 생검 및 절제 검체의 디지털 병리 AI 분석 보조",
+      "target_patient_population": "병리 조직 검사가 의뢰된 모든 환자 검체",
+      "intended_users": "병리과 전문의, 임상병리사, 병리 AI 개발 연구원",
+      "use_environment": "병원 병리과 판독실 및 온프레미스/클라우드 병리 분석 서버",
+      "clinical_benefit": "저품질 슬라이드 및 artifact로 인한 암 오진/위음성 사전 차단",
+      "device_category": "SaMD",
+      "has_ai_ml": true,
+      "has_network": true,
+      "has_gui": false,
+      "has_alarm": true,
+      "project_mode": "new",
+      "updated_at": "2026-11-09T06:55:42.482708+00:00",
+      "updated_by": "0-0_intake_agent"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "id": "LIT-001",
+      "type": "LIT",
+      "version": 1,
+      "status": "approved",
+      "title": "CAP/DICOM WSI 품질관리 및 Artifact 배제 임상 가이드라인",
+      "description": "WSI 슬라이드 품질 저하 요인 및 artifact 비율에 따른 암 진단 위음성 위험 문헌 분석",
+      "traces_to": {
+        "INT-001": 1
+      },
+      "category": "clinical_guideline",
+      "source_citation": "CAP & DICOM WG-26 WSI Quality Control Guidelines (2023)",
+      "key_findings": "H&E 슬라이드에서 artifact가 전체 조직의 20% 초과 시 미세암 절단 및 오진율 급증",
+      "benchmark_criteria": "조직 검출 Dice >= 0.92, Artifact 탐지 F1 >= 0.88",
+      "known_hazards_identified": [
+        "기포를 정상 조직으로 오인",
+        "접힘 영역의 암세포 미검출",
+        "초점 불량으로 인한 판독 오류"
+      ],
+      "updated_at": "2026-11-09T06:55:42.500624+00:00",
+      "updated_by": "0-A_literature_researcher"
+    }
+  ]
+}

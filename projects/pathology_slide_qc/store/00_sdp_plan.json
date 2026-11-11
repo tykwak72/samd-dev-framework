@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "SDP-001",
+      "type": "SDP",
+      "version": 1,
+      "status": "approved",
+      "title": "병리 전처리 컴포넌트 SW 개발계획서 (SDP)",
+      "description": "IEC 62304 Class B 수명주기 프로세스 및 V-모델 개발 계획 수립",
+      "traces_to": {
+        "REG-001": 1
+      },
+      "project_profile": {
+        "safety_class": "Class B",
+        "profiles": [
+          "ai_ml",
+          "alarm_system"
+        ]
+      },
+      "plan_category": "lifecycle",
+      "language_and_runtime": "Python 3.13",
+      "coding_standards": [
+        "PEP8",
+        "IEC 62304 Class B Coding Standards"
+      ],
+      "risk_acceptability_rule": "ALARP",
+      "min_test_coverage_pct": 85,
+      "workflow_steps": [
+        {
+          "step": 0,
+          "name": "Intake"
+        },
+        {
+          "step": 1,
+          "name": "SRS"
+        },
+        {
+          "step": 2,
+          "name": "SDS"
+        }
+      ],
+      "updated_at": "2026-11-09T06:55:42.576644+00:00",
+      "updated_by": "0-C_sdp_planner"
+    }
+  ]
+}

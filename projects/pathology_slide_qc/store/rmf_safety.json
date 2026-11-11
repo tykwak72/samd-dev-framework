@@ -1,0 +1,47 @@
+{
+  "items": [
+    {
+      "id": "HAZ-SAF-001",
+      "type": "HAZ-SAF",
+      "version": 4,
+      "status": "approved",
+      "title": "Artifact 과다 슬라이드로 인한 암 조직 오진/위음성 위험",
+      "description": "접힘 및 기포 영역을 정상 조직으로 오인하거나 암 영역을 artifact로 잘라내어 위음성 발생",
+      "traces_to": {
+        "SRS-001": 3
+      },
+      "stage_identified": "Stage 1",
+      "hazard_category": "Clinical Misdiagnosis",
+      "harm": "위음성으로 인한 악성 종양 환자의 치료 시기 상실 및 사망 초래",
+      "initial_severity": 4,
+      "initial_probability": 3,
+      "initial_risk_score": 12,
+      "control_required": true,
+      "residual_severity": 2,
+      "residual_probability": 1,
+      "residual_risk_score": 2,
+      "residual_acceptable": true,
+      "new_hazards_introduced": false,
+      "benefit_risk_justification": "UT/IT/ST 및 고장유도 음성시험(ST-002) 100% 통과로 잔여위험이 임상적 유익성 대비 완전히 허용 가능함이 실증됨",
+      "updated_at": "2026-11-09T14:48:29.114059+00:00",
+      "updated_by": "4-B_residual_risk_evaluator"
+    },
+    {
+      "id": "RC-SAF-001",
+      "type": "RC-SAF",
+      "version": 4,
+      "status": "approved",
+      "title": "Artifact 비율 20% 초과 시 LOW_QUALITY_REJECT 자동 차단",
+      "description": "유효 조직 대비 artifact 비율이 20% 이상인 경우 후속 AI 진단을 즉시 차단하고 수동 재검토 상태 반환",
+      "traces_to": {
+        "HAZ-SAF-001": 4
+      },
+      "control_priority": "1_inherent_safety",
+      "priority_justification": "소프트웨어 로직에 의한 원천적 자동 차단(Inherent Safety)",
+      "control_measure": "if artifact_ratio > 0.20: return status=LOW_QUALITY_REJECT",
+      "verification_status": "DESIGNED",
+      "updated_at": "2026-11-09T14:48:29.167664+00:00",
+      "updated_by": "1-B_safety_risk_analyst"
+    }
+  ]
+}

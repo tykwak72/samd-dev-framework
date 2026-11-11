@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "REL-001",
+      "type": "REL",
+      "version": 2,
+      "status": "approved",
+      "title": "SlidePreprocessor v1.0.0 공식 SW 릴리즈",
+      "description": "디지털 병리 슬라이드 조직 분할 및 품질관리 전처리 컴포넌트 Release 1.0.0 확정",
+      "traces_to": {
+        "AUD-005": 3
+      },
+      "release_version": "1.0.0",
+      "baseline_id": "BL-001",
+      "known_remaining_anomalies": [],
+      "overall_residual_risk_acceptable": true,
+      "release_environment_spec": {
+        "python_version": "3.13",
+        "target_os": "Linux x86_64 / arm64",
+        "dependencies": {
+          "Pillow": "10.2.0"
+        }
+      },
+      "updated_at": "2026-11-09T14:04:12.318287+00:00",
+      "updated_by": "5-A_release_author"
+    },
+    {
+      "id": "REL-002",
+      "type": "REL",
+      "version": 1,
+      "status": "approved",
+      "title": "SlidePreprocessor v1.0.1 유지보수 SW 릴리즈",
+      "description": "PR-001/CR-001 유색 병리사 펜 마킹 배제 알고리즘 보완 및 전수 회귀시험 통과에 따른 v1.0.1 정식 릴리즈",
+      "traces_to": {
+        "AUD-005": 4,
+        "CR-001": 2
+      },
+      "release_version": "1.0.1",
+      "baseline_id": "BL-002",
+      "known_remaining_anomalies": [],
+      "overall_residual_risk_acceptable": true,
+      "release_environment_spec": {
+        "python_version": "3.13",
+        "target_os": "Linux x86_64 / arm64",
+        "dependencies": {
+          "Pillow": "10.2.0"
+        }
+      },
+      "updated_at": "2026-11-09T14:48:33.408036+00:00",
+      "updated_by": "5-A_release_author"
+    }
+  ]
+}

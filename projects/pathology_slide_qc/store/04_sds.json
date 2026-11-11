@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "SDS-001",
+      "type": "SDS",
+      "version": 4,
+      "status": "approved",
+      "title": "preprocess_pathology_slide 상세설계 및 시그니처 계약",
+      "description": "블랙박스 테스터(4-A)가 소스코드 없이도 UT/IT를 작성할 수 있도록 엄격한 함수 시그니처 및 계약 명시",
+      "traces_to": {
+        "SRS-001": 3,
+        "SRS-002": 5,
+        "SRS-003": 5
+      },
+      "target_file_path": "src/slide_preprocessor.py",
+      "unit_type": "function",
+      "callable_name": "preprocess_pathology_slide",
+      "callable_signature": "def preprocess_pathology_slide(image_path: str, artifact_threshold: float = 0.20) -> dict",
+      "parameters_contract": [
+        {
+          "name": "image_path",
+          "type": "str"
+        },
+        {
+          "name": "artifact_threshold",
+          "type": "float"
+        }
+      ],
+      "return_contract": {
+        "type": "dict",
+        "required_keys": [
+          "status",
+          "tissue_area_px",
+          "artifact_area_px",
+          "artifact_ratio",
+          "is_usable"
+        ]
+      },
+      "exception_contract": [
+        {
+          "exception_type": "FileNotFoundError",
+          "condition": "파일 미존재 시"
+        },
+        {
+          "exception_type": "ValueError",
+          "condition": "파일 크기 5GB 초과 또는 손상 시"
+        }
+      ],
+      "algorithm_specification": "1. 파일 사전검증 -> 2. 이미지 로드 -> 3. 조직 분할 마스크 -> 4. 고농도 접힘 및 RGB 고채도 유색 펜마킹 artifact 마스크 -> 5. 비율 계산 -> 6. status 결정",
+      "updated_at": "2026-11-09T14:48:29.477671+00:00",
+      "updated_by": "2-A_software_architect"
+    }
+  ]
+}

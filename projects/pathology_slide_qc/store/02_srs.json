@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "id": "SRS-001",
+      "type": "SRS",
+      "version": 3,
+      "status": "approved",
+      "title": "조직 영역 및 Artifact 분할 알고리즘 기능 요구",
+      "description": "슬라이드 이미지 픽셀 단위로 생체 조직과 artifact(기포, 접힘, 블러 및 RGB 채도 >= 120 유색 펜마킹)를 식별 및 마스킹 (CR-001 반영)",
+      "traces_to": {
+        "URS-001": 2
+      },
+      "req_category": "functional",
+      "verification_method": "system_test",
+      "measurable_criteria": "조직 영역 검출 Dice 계수 >= 0.90 달성",
+      "updated_at": "2026-11-09T14:48:29.069829+00:00",
+      "updated_by": "1-A_requirements_author"
+    },
+    {
+      "id": "SRS-002",
+      "type": "SRS",
+      "version": 5,
+      "status": "approved",
+      "title": "저품질 슬라이드 판정 및 차단 안전 요구사항",
+      "description": "artifact 비율이 20% 초과할 경우 품질 상태를 LOW_QUALITY_REJECT로 반환하여 후속 분석 차단 (URS v2 펜마킹 배제 요건 검토 완료)",
+      "traces_to": {
+        "URS-001": 2,
+        "RC-SAF-001": 4
+      },
+      "req_category": "safety",
+      "verification_method": "system_test",
+      "measurable_criteria": "artifact_ratio > 0.20 일 때 status == LOW_QUALITY_REJECT 정확도 100%",
+      "updated_at": "2026-11-09T14:48:29.276762+00:00",
+      "updated_by": "1-A_requirements_author"
+    },
+    {
+      "id": "SRS-003",
+      "type": "SRS",
+      "version": 5,
+      "status": "approved",
+      "title": "입력 이미지 파일 사전 유효성 및 보안 검증 요구사항",
+      "description": "파일 존재 여부, 파일 크기(최대 5GB 제한), 손상 파일 감지 시 안전 예외 발생 (URS v2 펜마킹 배제 요건 검토 완료)",
+      "traces_to": {
+        "URS-001": 2,
+        "RC-SEC-001": 4
+      },
+      "req_category": "security",
+      "verification_method": "unit_test",
+      "measurable_criteria": "5GB 초과 파일 및 손상 파일 입력 시 ValueError 즉시 발생",
+      "updated_at": "2026-11-09T14:48:29.305905+00:00",
+      "updated_by": "1-A_requirements_author"
+    }
+  ]
+}

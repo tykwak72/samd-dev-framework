@@ -1,0 +1,476 @@
+{
+  "last_updated": "2026-11-10T01:52:06.048742+00:00",
+  "links": {
+    "INT-001": {
+      "item_type": "INT",
+      "current_version": 1,
+      "store_file": "00_intake.json",
+      "upward": {},
+      "downward": {
+        "LIT-001": 1,
+        "REG-001": 1,
+        "URS-001": 1
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "LIT-001": {
+      "item_type": "LIT",
+      "current_version": 1,
+      "store_file": "00_literature.json",
+      "upward": {
+        "INT-001": 1
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "REG-001": {
+      "item_type": "REG",
+      "current_version": 1,
+      "store_file": "00_regulatory.json",
+      "upward": {
+        "INT-001": 1
+      },
+      "downward": {
+        "SDP-001": 1
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SDP-001": {
+      "item_type": "SDP",
+      "current_version": 1,
+      "store_file": "00_sdp_plan.json",
+      "upward": {
+        "REG-001": 1
+      },
+      "downward": {
+        "AUD-001": 1
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "URS-001": {
+      "item_type": "URS",
+      "current_version": 2,
+      "store_file": "01_urs.json",
+      "upward": {
+        "INT-001": 1
+      },
+      "downward": {
+        "SRS-001": 2,
+        "SRS-002": 2,
+        "SRS-003": 2,
+        "VT-001": 2
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SRS-001": {
+      "item_type": "SRS",
+      "current_version": 3,
+      "store_file": "02_srs.json",
+      "upward": {
+        "URS-001": 2
+      },
+      "downward": {
+        "SAD-001": 3,
+        "SOUP-001": 3,
+        "SDS-001": 3,
+        "ST-001": 3,
+        "HAZ-SAF-001": 3,
+        "HAZ-SEC-001": 3,
+        "AUD-002": 3
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SRS-002": {
+      "item_type": "SRS",
+      "current_version": 5,
+      "store_file": "02_srs.json",
+      "upward": {
+        "URS-001": 2,
+        "RC-SAF-001": 4
+      },
+      "downward": {
+        "SAD-001": 5,
+        "SDS-001": 5,
+        "ST-002": 5,
+        "AUD-002": 5
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SRS-003": {
+      "item_type": "SRS",
+      "current_version": 5,
+      "store_file": "02_srs.json",
+      "upward": {
+        "URS-001": 2,
+        "RC-SEC-001": 4
+      },
+      "downward": {
+        "SAD-001": 5,
+        "SDS-001": 5,
+        "ST-003": 5,
+        "AUD-002": 5
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SAD-001": {
+      "item_type": "SAD",
+      "current_version": 4,
+      "store_file": "03_sad_soup.json",
+      "upward": {
+        "SRS-001": 3,
+        "SRS-002": 5,
+        "SRS-003": 5
+      },
+      "downward": {
+        "IT-001": 4,
+        "AUD-003": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SOUP-001": {
+      "item_type": "SOUP",
+      "current_version": 3,
+      "store_file": "03_sad_soup.json",
+      "upward": {
+        "SRS-001": 3
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "SDS-001": {
+      "item_type": "SDS",
+      "current_version": 4,
+      "store_file": "04_sds.json",
+      "upward": {
+        "SRS-001": 3,
+        "SRS-002": 5,
+        "SRS-003": 5
+      },
+      "downward": {
+        "UT-001": 4,
+        "AUD-003": 4,
+        "AUD-004": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "UT-001": {
+      "item_type": "UT",
+      "current_version": 6,
+      "store_file": "05_tc.json",
+      "upward": {
+        "SDS-001": 4
+      },
+      "downward": {
+        "AUD-005": 6
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "UT-002": {
+      "item_type": "UT",
+      "current_version": 6,
+      "store_file": "05_tc.json",
+      "upward": {
+        "RC-SEC-001": 4
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "IT-001": {
+      "item_type": "IT",
+      "current_version": 6,
+      "store_file": "05_tc.json",
+      "upward": {
+        "SAD-001": 4
+      },
+      "downward": {
+        "AUD-005": 6
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "ST-001": {
+      "item_type": "ST",
+      "current_version": 6,
+      "store_file": "05_tc.json",
+      "upward": {
+        "SRS-001": 3
+      },
+      "downward": {
+        "AUD-005": 6
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "ST-002": {
+      "item_type": "ST",
+      "current_version": 6,
+      "store_file": "05_tc.json",
+      "upward": {
+        "SRS-002": 5,
+        "RC-SAF-001": 4
+      },
+      "downward": {
+        "AUD-005": 6
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "VT-001": {
+      "item_type": "VT",
+      "current_version": 5,
+      "store_file": "05_tc.json",
+      "upward": {
+        "URS-001": 2
+      },
+      "downward": {
+        "AUD-005": 5
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "ST-003": {
+      "item_type": "ST",
+      "current_version": 3,
+      "store_file": "05_tc.json",
+      "upward": {
+        "SRS-003": 5,
+        "RC-SEC-001": 4
+      },
+      "downward": {
+        "AUD-005": 3
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "REL-001": {
+      "item_type": "REL",
+      "current_version": 2,
+      "store_file": "06_release.json",
+      "upward": {
+        "AUD-005": 3
+      },
+      "downward": {
+        "AUD-006": 2,
+        "BL-001": 2,
+        "PR-001": 2
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "REL-002": {
+      "item_type": "REL",
+      "current_version": 1,
+      "store_file": "06_release.json",
+      "upward": {
+        "AUD-005": 4,
+        "CR-001": 2
+      },
+      "downward": {
+        "AUD-006": 1,
+        "BL-002": 1
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "HAZ-SAF-001": {
+      "item_type": "HAZ-SAF",
+      "current_version": 4,
+      "store_file": "rmf_safety.json",
+      "upward": {
+        "SRS-001": 3
+      },
+      "downward": {
+        "RC-SAF-001": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "RC-SAF-001": {
+      "item_type": "RC-SAF",
+      "current_version": 4,
+      "store_file": "rmf_safety.json",
+      "upward": {
+        "HAZ-SAF-001": 4
+      },
+      "downward": {
+        "SRS-002": 4,
+        "ST-002": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "HAZ-SEC-001": {
+      "item_type": "HAZ-SEC",
+      "current_version": 4,
+      "store_file": "rmf_security.json",
+      "upward": {
+        "SRS-001": 3
+      },
+      "downward": {
+        "RC-SEC-001": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "RC-SEC-001": {
+      "item_type": "RC-SEC",
+      "current_version": 4,
+      "store_file": "rmf_security.json",
+      "upward": {
+        "HAZ-SEC-001": 4
+      },
+      "downward": {
+        "SRS-003": 4,
+        "UT-002": 4,
+        "ST-003": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-001": {
+      "item_type": "AUD",
+      "current_version": 1,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "SDP-001": 1
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-002": {
+      "item_type": "AUD",
+      "current_version": 4,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "SRS-001": 3,
+        "SRS-002": 5,
+        "SRS-003": 5
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-003": {
+      "item_type": "AUD",
+      "current_version": 4,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "SAD-001": 4,
+        "SDS-001": 4
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-004": {
+      "item_type": "AUD",
+      "current_version": 3,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "SDS-001": 4
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-005": {
+      "item_type": "AUD",
+      "current_version": 4,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "UT-001": 6,
+        "IT-001": 6,
+        "ST-001": 6,
+        "ST-002": 6,
+        "ST-003": 3,
+        "VT-001": 5
+      },
+      "downward": {
+        "REL-001": 3,
+        "REL-002": 4
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "AUD-006": {
+      "item_type": "AUD",
+      "current_version": 3,
+      "store_file": "audit_findings.json",
+      "upward": {
+        "REL-001": 2,
+        "REL-002": 1
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "BL-001": {
+      "item_type": "BL",
+      "current_version": 1,
+      "store_file": "cm_baselines.json",
+      "upward": {
+        "REL-001": 2
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "BL-002": {
+      "item_type": "BL",
+      "current_version": 1,
+      "store_file": "cm_baselines.json",
+      "upward": {
+        "REL-002": 1
+      },
+      "downward": {},
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "PR-001": {
+      "item_type": "PR",
+      "current_version": 2,
+      "store_file": "pr_cr_log.json",
+      "upward": {
+        "REL-001": 2
+      },
+      "downward": {
+        "CR-001": 2
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    },
+    "CR-001": {
+      "item_type": "CR",
+      "current_version": 2,
+      "store_file": "pr_cr_log.json",
+      "upward": {
+        "PR-001": 2
+      },
+      "downward": {
+        "REL-002": 2
+      },
+      "is_suspect": false,
+      "suspect_reasons": []
+    }
+  },
+  "coverage_summary": {
+    "total_items": 34,
+    "uncovered_items": [],
+    "broken_links": [],
+    "suspect_links": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "id": "URS-001",
+      "type": "URS",
+      "version": 2,
+      "status": "approved",
+      "title": "WSI 슬라이드 유효 조직 자동 분할 및 품질 상태 판정 요구",
+      "description": "H&E 염색 WSI에서 조직 접힘, 기포 및 병리사 펜 마킹 영역까지 전면 배제하여 유효 조직 추출 (v2 강화 요건)",
+      "traces_to": {
+        "INT-001": 1
+      },
+      "stakeholder": "clinician",
+      "acceptance_criteria": "H&E 염색 WSI에서 배경/유리 슬라이드를 제외한 유효 조직 분할 및 artifact 비율 산출",
+      "updated_at": "2026-11-09T07:03:56.653402+00:00",
+      "updated_by": "1-A_requirements_author"
+    }
+  ]
+}

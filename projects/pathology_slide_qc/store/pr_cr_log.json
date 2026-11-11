@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "id": "PR-001",
+      "type": "PR",
+      "version": 2,
+      "status": "approved",
+      "title": "고채도 청색/녹색 병리사 펜 마킹 영역 미배제 현장 문제 보고",
+      "description": "Release 1.0.0 출시 후 임상 병리과에서 밝은 청색/녹색 펜 마킹(밝기 > 40)이 정상 조직으로 산입되는 현상 보고",
+      "traces_to": {
+        "REL-001": 2
+      },
+      "problem_source": "clinical_field_feedback",
+      "safety_security_impact": "펜 마킹이 조직 면적에 포함될 경우 실제 유효 조직 대비 artifact 비율 왜곡 우려 (안전성 영향 있음)",
+      "investigation_summary": "SRS-001 및 SDS-001 알고리즘이 어두운 마킹(brightness <= 40)만 검출하고 RGB 고채도 유색 펜 잉크(saturation >= 120)를 검출하지 않음을 확인",
+      "resolution_status": "CLOSED",
+      "updated_at": "2026-11-09T14:48:33.178496+00:00",
+      "updated_by": "6-A_maintenance_change_analyst"
+    },
+    {
+      "id": "CR-001",
+      "type": "CR",
+      "version": 2,
+      "status": "approved",
+      "title": "RGB 채도 기반 유색 펜 마킹 Artifact 검출 알고리즘 추가 변경요청",
+      "description": "PR-001 해결을 위해 SRS-001, SDS-001 및 slide_preprocessor.py에 고채도 청색/녹색 펜 잉크 마스킹 로직 추가 및 전수 회귀시험 수행",
+      "traces_to": {
+        "PR-001": 2
+      },
+      "change_reason": "PR-001 임상 현장 유색 펜 마킹 배제 누락 결함 시정 (IEC 62304 Clause 6 & 9)",
+      "impacted_item_ids": [
+        "SRS-001",
+        "SAD-001",
+        "SDS-001"
+      ],
+      "regression_test_ids": [
+        "UT-001",
+        "UT-002",
+        "IT-001",
+        "ST-001",
+        "ST-002",
+        "ST-003",
+        "VT-001"
+      ],
+      "approval_status": "APPROVED",
+      "updated_at": "2026-11-09T14:48:33.226296+00:00",
+      "updated_by": "6-A_maintenance_change_analyst"
+    }
+  ]
+}

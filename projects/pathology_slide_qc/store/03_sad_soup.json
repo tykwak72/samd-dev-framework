@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "SAD-001",
+      "type": "SAD",
+      "version": 4,
+      "status": "approved",
+      "title": "SlidePreprocessor 아키텍처 모듈 설계",
+      "description": "슬라이드 이미지 입력 검증, 조직/artifact 분할 및 품질 상태 출력을 담당하는 독립 전처리 서브시스템",
+      "traces_to": {
+        "SRS-001": 3,
+        "SRS-002": 5,
+        "SRS-003": 5
+      },
+      "module_name": "SlidePreprocessor",
+      "safety_class": "Class B",
+      "module_responsibility": "입력 검증, 조직 마스킹, artifact 비율 산출, 품질 판정 결과 객체 반환",
+      "public_interfaces": [
+        "preprocess_pathology_slide(image_path: str, artifact_threshold: float) -> dict"
+      ],
+      "segregation_strategy": "후속 암 진단 AI 모델 파이프라인과 API 경계로 분리하여 저품질 슬라이드 유입 원천 차단",
+      "updated_at": "2026-11-09T14:48:29.344944+00:00",
+      "updated_by": "2-A_software_architect"
+    },
+    {
+      "id": "SOUP-001",
+      "type": "SOUP",
+      "version": 3,
+      "status": "approved",
+      "title": "Pillow (PIL) 이미지 처리 오픈소스 라이브러리",
+      "description": "WSI 및 고해상도 병리 슬라이드 이미지 파일 로딩 및 픽셀 배열 변환용 SOUP",
+      "traces_to": {
+        "SRS-001": 3
+      },
+      "package_name": "Pillow",
+      "exact_version": "10.2.0",
+      "license": "HPND",
+      "functional_performance_req": "표준 TIFF/PNG/JPEG 래스터 이미지 디코딩 및 RGB 배열 변환",
+      "hw_memory_requirements": "최소 2GB RAM 환경",
+      "known_anomalies_and_cve": "CVE-2023-50447 패치 완료 버전 채택",
+      "risk_control_justification": "SRS-003에 정의된 파일 크기 상한 검사로 버퍼오버플로 사전 차단",
+      "updated_at": "2026-11-09T14:48:29.406868+00:00",
+      "updated_by": "2-A_software_architect"
+    }
+  ]
+}

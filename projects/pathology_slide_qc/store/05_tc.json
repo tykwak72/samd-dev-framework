@@ -1,0 +1,149 @@
+{
+  "items": [
+    {
+      "id": "UT-001",
+      "type": "UT",
+      "version": 6,
+      "status": "approved",
+      "title": "정상 병리 슬라이드 조직 분할 및 PASS 상태 검증",
+      "description": "정상 H&E 슬라이드 이미지 투입 시 조직 영역 정상 분할 및 status=PASS, is_usable=True 검증",
+      "traces_to": {
+        "SDS-001": 4
+      },
+      "test_level": "UT",
+      "execution_mode": "automated",
+      "is_negative_test": false,
+      "test_file_path": "tests/test_ut_preprocessor.py",
+      "test_callable_name": "test_preprocess_normal_slide",
+      "expected_outcome": "status == PASS and is_usable == True and artifact_ratio <= 0.20",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.523496+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "UT-002",
+      "type": "UT",
+      "version": 6,
+      "status": "approved",
+      "title": "비정상/손상/미존재 파일 입력 시 보안 예외 처리 검증",
+      "description": "미존재 파일 시 FileNotFoundError, 손상/0바이트 파일 시 ValueError 정상 발생 검증",
+      "traces_to": {
+        "RC-SEC-001": 4
+      },
+      "test_level": "UT",
+      "execution_mode": "automated",
+      "is_negative_test": true,
+      "test_file_path": "tests/test_ut_preprocessor.py",
+      "test_callable_name": "test_security_negative_file_checks",
+      "expected_outcome": "FileNotFoundError and ValueError correctly raised",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.553193+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "IT-001",
+      "type": "IT",
+      "version": 6,
+      "status": "approved",
+      "title": "SlidePreprocessor 모듈과 Pillow 디코더 인터페이스 연동 검증",
+      "description": "SAD-001 아키텍처 모듈과 SOUP-001 연동 및 예외 격리 인터페이스 검증",
+      "traces_to": {
+        "SAD-001": 4
+      },
+      "test_level": "IT",
+      "execution_mode": "automated",
+      "is_negative_test": false,
+      "test_file_path": "tests/test_it_integration.py",
+      "test_callable_name": "test_slide_preprocessor_pipeline",
+      "expected_outcome": "Pillow RGB 데이터가 SlidePreprocessor 로직에 정상 매핑되고 결과 반환",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.590648+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "ST-001",
+      "type": "ST",
+      "version": 6,
+      "status": "approved",
+      "title": "전체 슬라이드 조직 영역 분할 및 정량 성능 검증",
+      "description": "다양한 H&E 슬라이드에 대해 조직 영역이 배경과 성공적으로 분리되는지 시스템 검증",
+      "traces_to": {
+        "SRS-001": 3
+      },
+      "test_level": "ST",
+      "execution_mode": "automated",
+      "is_negative_test": false,
+      "test_file_path": "tests/test_st_system.py",
+      "test_callable_name": "test_system_requirements_coverage",
+      "expected_outcome": "tissue_area_px > 0 and dict keys fully populated",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.737480+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "ST-002",
+      "type": "ST",
+      "version": 6,
+      "status": "approved",
+      "title": "Artifact 20% 초과 저품질 슬라이드 강제 차단 고장유도 시험",
+      "description": "접힘 및 기포 등 artifact 비율이 20% 초과하는 불량 슬라이드 입력 시 LOW_QUALITY_REJECT 반환 검증",
+      "traces_to": {
+        "SRS-002": 5,
+        "RC-SAF-001": 4
+      },
+      "test_level": "ST",
+      "execution_mode": "automated",
+      "is_negative_test": true,
+      "test_file_path": "tests/test_st_system.py",
+      "test_callable_name": "test_fault_injection_high_artifact_rejection",
+      "expected_outcome": "status == LOW_QUALITY_REJECT and is_usable == False",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.780962+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "VT-001",
+      "type": "VT",
+      "version": 5,
+      "status": "approved",
+      "title": "병리전문의 사용적합성 및 임상 유효성 밸리데이션",
+      "description": "병리전문의가 실제 검체 10건에 대해 육안 판독 결과와 분할 결과의 일치성 최종 승인",
+      "traces_to": {
+        "URS-001": 2
+      },
+      "test_level": "VT",
+      "execution_mode": "manual_checklist",
+      "is_negative_test": false,
+      "test_file_path": "docs/VT_수동시험체크리스트.md",
+      "test_callable_name": "manual_pathologist_evaluation",
+      "expected_outcome": "병리전문의 판독 소견과 100% 일치 및 서명 완료",
+      "last_run_status": "PASS",
+      "validation_protocol": "임상 H&E 슬라이드 10건 육안 대조 평가",
+      "human_verified_by": "김병리 전문의 (MD)",
+      "human_observation_notes": "기포 및 펜마킹 배제 정확도가 임상 진단에 적합함을 최종 확인",
+      "updated_at": "2026-11-09T13:46:00.963987+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    },
+    {
+      "id": "ST-003",
+      "type": "ST",
+      "version": 3,
+      "status": "approved",
+      "title": "입력 파일 보안 및 손상 방어 시스템 시험",
+      "description": "손상 파일 및 미존재 파일 입력 시 시스템 안전 예외 처리 검증",
+      "traces_to": {
+        "SRS-003": 5,
+        "RC-SEC-001": 4
+      },
+      "test_level": "ST",
+      "execution_mode": "automated",
+      "is_negative_test": true,
+      "test_file_path": "tests/test_st_system.py",
+      "test_callable_name": "test_security_negative_file_checks",
+      "expected_outcome": "FileNotFoundError and ValueError safely handled",
+      "last_run_status": "PASS",
+      "updated_at": "2026-11-09T14:48:29.876871+00:00",
+      "updated_by": "4-A_blackbox_tester"
+    }
+  ]
+}

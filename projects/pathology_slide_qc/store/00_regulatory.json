@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "id": "REG-001",
+      "type": "REG",
+      "version": 1,
+      "status": "approved",
+      "title": "체외진단 SaMD Class B 분류 및 적용 규제 표준",
+      "description": "IEC 62304 4.3절 기준 Class B 분류 및 인허가 전략",
+      "traces_to": {
+        "INT-001": 1
+      },
+      "safety_class": "Class B",
+      "fda_doc_level": "Basic",
+      "target_regions": [
+        "MFDS",
+        "FDA",
+        "CE_MDR"
+      ],
+      "active_profiles": [
+        "ai_ml",
+        "alarm_system"
+      ],
+      "applicable_standards": [
+        "IEC 62304:2015",
+        "ISO 14971:2019",
+        "IEC 82304-1:2016",
+        "IEC 81001-5-1:2021"
+      ],
+      "regulatory_mandate": "식약처 2등급 체외진단 SaMD 인허가 요건 준수 및 위험통제 의무화",
+      "updated_at": "2026-11-09T06:55:42.555453+00:00",
+      "updated_by": "0-B_regulatory_strategist"
+    }
+  ]
+}
